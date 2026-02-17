@@ -1,0 +1,70 @@
+# ============================================================
+# UEC SAMPLE PACKET 1 — Hop 1 congested
+# ============================================================
+
+0000  00 11 22 33 44 55 66 77 88 99 aa bb 08 00 45 00
+0010  00 50 00 01 00 00 40 11 7c b2 c0 a8 01 01 c0 a8
+0020  01 02 15 b3 15 b3 00 3c 00 00
+
+# UEC Transport Header
+0030  00 01        # Version = 1
+0032  00 02        # Flags = 0x0002
+0034  12 34 56 78  # Flow ID
+0038  00 00 00 0A  # Sequence = 10
+003C  00 00 00 20  # Payload Length = 32 bytes
+
+# UEC Congestion Header
+0040  00 00 00 05  # ECN Feedback = 5
+0044  00 00 00 64  # Rate Hint = 100 Mbps
+
+# Telemetry Header
+0048  00 02        # Hop Count = 2
+004A  00 14        # Telemetry Length = 20 bytes
+
+# Hop 1 TLVs (10 bytes)
+004C  01 04 00 00 00 A1   # Switch ID = 0xA1
+0052  02 01 50            # Queue Depth = 80%
+0055  03 02 00 64         # Latency = 100 µs
+0059  04 01 40            # ECN Prob = 64%
+
+# Hop 2 TLVs (10 bytes)
+005C  01 04 00 00 00 B7   # Switch ID = 0xB7
+0062  02 01 10            # Queue Depth = 16%
+0065  03 02 00 20         # Latency = 32 µs
+0069  05 02 00 02         # Output Interface = 2
+
+
+# ============================================================
+# UEC SAMPLE PACKET 2 — Hop 2 congested
+# ============================================================
+
+0000  00 11 22 33 44 55 66 77 88 99 aa bb 08 00 45 00
+0010  00 50 00 02 00 00 40 11 7c b1 c0 a8 01 01 c0 a8
+0020  01 02 15 b3 15 b3 00 3c 00 00
+
+# UEC Transport Header
+0030  00 01
+0032  00 02
+0034  12 34 56 78
+0038  00 00 00 0B  # Sequence = 11
+003C  00 00 00 20
+
+# UEC Congestion Header
+0040  00 00 00 03  # ECN Feedback = 3
+0044  00 00 00 64
+
+# Telemetry Header
+0048  00 02
+004A  00 14
+
+# Hop 1 TLVs (10 bytes)
+004C  01 04 00 00 00 A1
+0052  02 01 10            # Queue Depth = 16%
+0055  03 02 00 20         # Latency = 32 µs
+0059  04 01 10            # ECN Prob = 16%
+
+# Hop 2 TLVs (10 bytes)
+005C  01 04 00 00 00 B7
+0062  02 01 70            # Queue Depth = 112% (mock congestion)
+0065  03 02 01 F4         # Latency = 500 µs
+0069  05 02 00 03         # Output Interface = 3
