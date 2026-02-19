@@ -1,4 +1,4 @@
-# UEC Wireshark Dissector (PoC Mock-Up)
+# Ultra Ethernet Consortium (UEC) Wireshark Dissector (PoC Mock-Up)
 
 This repository contains a **mock-up PoC Wireshark dissector** for a **mock Ultra Ethernet Consortium (UEC) transport header**.
 
