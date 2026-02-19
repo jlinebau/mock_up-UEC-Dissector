@@ -14,7 +14,7 @@ The goal is to:
 - Demonstrate understanding of AI fabric transports.
 - Provide a concrete Wireshark dissector for labs and PoC work.
 
----
+----
 
 
 
@@ -57,7 +57,7 @@ explanations, and educational purposes while remaining fully transparent about i
 non‑official status.
 
 
-
+----
 
 
 # How This Mock Maps to UEC Architecture
@@ -92,7 +92,7 @@ Ethernet
       → Payload
 ```
 
-
+----
 
 
 
