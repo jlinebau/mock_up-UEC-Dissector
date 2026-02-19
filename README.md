@@ -17,6 +17,8 @@ The goal is to:
 ---
 
 
+
+
 # Disclaimer
 
 The UEC header format defined in this repository is a **mock protocol** created
@@ -55,6 +57,9 @@ explanations, and educational purposes while remaining fully transparent about i
 non‑official status.
 
 
+
+
+
 # How This Mock Maps to UEC Architecture
 
 Although the exact UEC wire format is not public, UEC has described the following
@@ -86,6 +91,9 @@ Ethernet
       → UEC Telemetry Block (per-hop TLVs)
       → Payload
 ```
+
+
+
 
 
 
