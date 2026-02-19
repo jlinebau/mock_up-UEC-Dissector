@@ -16,22 +16,6 @@ The goal is to:
 
 ---
 
-## Protocol model
-
-The mock UEC packet is carried over **UDP** (for lab convenience):
-
-```text
-Ethernet
-  → IPv4/IPv6
-    → UDP (port 5555 by default)
-      → UEC Transport Header
-      → UEC Congestion Header
-      → UEC Telemetry Block (per-hop TLVs)
-      → Payload
-```
-
-
-
 
 # Disclaimer
 
@@ -54,7 +38,7 @@ specification.
 It exists solely as a teaching and demonstration tool.
 
 
-# Why a Mock Header?
+## Why a Mock Header?
 
 UEC has publicly described the architecture of its transport, congestion control,
 and telemetry systems, but has not yet released a byte‑level wire format.
@@ -88,6 +72,20 @@ The mock header in this repository maps to these concepts as follows:
 - **UEC Congestion Header** → models fabric‑assisted congestion feedback
 - **UEC Telemetry Block** → models per‑hop in‑band telemetry (IOAM‑like)
 - **TLVs** → model extensible telemetry and metadata
+
+## Protocol model
+
+The mock UEC packet is carried over **UDP** (for lab convenience):
+
+```text
+Ethernet
+  → IPv4/IPv6
+    → UDP (port 5555 by default)
+      → UEC Transport Header
+      → UEC Congestion Header
+      → UEC Telemetry Block (per-hop TLVs)
+      → Payload
+```
 
 
 
